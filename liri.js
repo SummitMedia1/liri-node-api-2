@@ -21,9 +21,10 @@ function getTweets () {
 			 	console.log("=================================================================");
 			 	console.log("Here are @SummitMedia1's latest tweets:");
 					for(var i = 0; i < data.length; i++) {
-						console.log ("_______________________________________________________");
-	 					console.log ('@SummitMedia1 tweeted on: ' + data[i].created_at);
-	 					console.log ('Message:' + data[i].text);
+						console.log("_______________________________________________________");
+						console.log('Tweet Number: ' + (i+1));
+	 					console.log('@SummitMedia1 tweeted on: ' + data[i].created_at);
+	 					console.log('Message:' + data[i].text);
 	 					}
 
 }
@@ -52,14 +53,49 @@ function getSong() {
 						for (var i = 0; i < data.tracks.items.length; i++) {
 							var music = data.tracks.items[i];	
 								console.log('-----------------------------------------------------------------' + '\r\n');
-								console.log('Artist Name(s): ' + music.artists[0].name + ".\r\n");
-								console.log('Song Name: ' + music.name + ".\r\n");
-								console.log('Album Name: ' + music.album.name + ".\r+\n");
-								console.log('Preview Song Url: ' + music.preview_url + ".\r\n");
-								console.log("-----------------------------------------------------------------" + "\r\n");
+								console.log('Artist Name(s): ' + music.artists[0].name + '.\r\n');
+								console.log('Song Name: ' + music.name + '.\r\n');
+								console.log('AAlbum Name: ' + music.album.name + '.\r+\n');
+								console.log('Preview Song Url: ' + music.preview_url + '.\r\n');
+								console.log("-----------------------------------------------------------------" + '\r\n');
 						}
 });
 }
+
+//******************************END OF SPOTIFY***************************************************
+
+//******************************BEGIN OMDB*******************************************************
+// var omdbApi = require('omdb-client');
+
+// function aMovieForMe(){
+ 	var movieTitle = process.argv[3];
+ 	var newMovieTitle = "Mr+Nobody";
+ 	if ( movieTitle === undefined ) {
+ 		movieTitle = newMovieTitle;
+     }
+
+     request('http://www.omdbapi.com/?t=' + movieTitle + '&y=&plot=short&tomatoes=true&apikey=40e9cece', 
+     	function (err, response, body) {
+     console.log("Movie Title: " + JSON.stringify( movieTitle, null, 2));      
+      if (!err && response.statusCode == 200) {
+               var movieData = JSON.parse(body);
+               console.log("Title: " + movieData.Title);
+               console.log("Year: " + movieData.Year);
+               console.log("IMDB Rating: " + movieData.imdbRating);
+               console.log("Country: " + movieData.Country);
+               console.log("Language: " + movieData.Language);
+               console.log("Plot: " + movieData.Plot);
+               console.log("Actors: " + movieData.Actors);
+               console.log("Rotten Tomatoes Rating: " + movieData.tomatoUserRating);
+               console.log("Rotten Tomatoes URL: " + movieData.tomatoURL);
+               
+          } else {
+               console.log(err);
+          }
+// });
+
+});
+
 	//action statement, switch statement to declare what action to execute.
 	switch(liriCmd){
 
@@ -80,43 +116,3 @@ function getSong() {
 		break;
 		
 	}
-
-
-//******************************END OF SPOTIFY***************************************************
-
-//******************************BEGIN OMDB*******************************************************
-// var omdbApi = require('omdb-client');
-
-function aMovieForMe(){
-     var movieTitle = process.argv[3];
-     var newMovieTitle = "Mr+Nobody";
-     	if ( movieTitle === undefined ) {
-     		movieTitle = newMovieTitle;
-     	}
-console.log("Movie Title: " + JSON.stringify( movieTitle, null, 2));
-     	var finalMovie = movieTitle;
-     request('http://www.omdbapi.com/?t=' + finalMovie + '&y=&plot=short&r=json&tomatoes=true&apikey=40e9cece' ),
-     	function (err, response, body) {
-		var body = JSON.parse(body);
-		if (err) {
-			console.log('The following error occurred: ' + err);
-		} else {
-			for (var i = 0; i < body.length; i++) {
-		console.log('------------------------- Movie Info ----------------------------');
-		console.log('-----------------------------------------------------------------' + '\r\n');
-	    console.log('Title: ' + body.Title[0]);
-	    console.log('Release Year: ' + body.Year);
-	    console.log('IMdB Rating: ' + body.imdbRating);
-	    console.log('Rotten Tomatoes Rating: ' + body.incTomatoes);
-	    console.log('Produced In (Country): ' + body.Country);
-	    console.log('Language: ' + body.Language);
-	    console.log('Plot: ' + body.Plot);
-	    console.log('Actors: ' + body.Actors);
-	    console.log('-----------------------------------------------------------------' + '\r\n');
-      }
-
-      }
-
- 
-};
-}
