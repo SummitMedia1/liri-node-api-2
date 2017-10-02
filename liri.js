@@ -87,29 +87,36 @@ function getSong() {
 //******************************BEGIN OMDB*******************************************************
 // var omdbApi = require('omdb-client');
 
-function aMovieForMe(body){
+function aMovieForMe(){
      var movieTitle = process.argv[3];
-     var newMovieTitle = "Mr Nobody";
-     	if ( movieTitle === "" ) {
+     var newMovieTitle = "Mr+Nobody";
+     	if ( movieTitle === undefined ) {
      		movieTitle = newMovieTitle;
      	}
-
+console.log("Movie Title: " + JSON.stringify( movieTitle, null, 2));
      	var finalMovie = movieTitle;
      request('http://www.omdbapi.com/?t=' + finalMovie + '&y=&plot=short&r=json&tomatoes=true&apikey=40e9cece' ),
-     	function (error, response, body) {
-		
+     	function (err, response, body) {
+		var body = JSON.parse(body);
+		if (err) {
+			console.log('The following error occurred: ' + err);
+		} else {
+			for (var i = 0; i < body.length; i++) {
 		console.log('------------------------- Movie Info ----------------------------');
 		console.log('-----------------------------------------------------------------' + '\r\n');
-	    console.log('Title: ' + body.title);
-	    console.log('Release Year: ' + body.year);
+	    console.log('Title: ' + body.Title[0]);
+	    console.log('Release Year: ' + body.Year);
 	    console.log('IMdB Rating: ' + body.imdbRating);
 	    console.log('Rotten Tomatoes Rating: ' + body.incTomatoes);
-	    console.log('Produced In (Country): ' + body.country);
-	    console.log('Language: ' + body.language);
-	    console.log('Plot: ' + body.plot);
-	    console.log('Actors: ' + body.actors);
+	    console.log('Produced In (Country): ' + body.Country);
+	    console.log('Language: ' + body.Language);
+	    console.log('Plot: ' + body.Plot);
+	    console.log('Actors: ' + body.Actors);
 	    console.log('-----------------------------------------------------------------' + '\r\n');
-	  };
-	//     } else {
-	//       console.log('Error occurred.');
+      }
+
+      }
+
+ 
+};
 }
