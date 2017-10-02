@@ -85,3 +85,36 @@ function getSong() {
 //******************************END OF SPOTIFY***************************************************
 
 //******************************BEGIN OMDB*******************************************************
+var omdbApi = require('omdb-client');
+
+function aMovieForMe(body){
+     var movieTitle = process.argv[3];
+     var url = 'http://www.omdbapi.com/?t=' ;
+     var attributes = '&y=&plot=short&r=json&tomatoes=true';
+     var newMovieTitle = "Mr Nobody";
+     	if ( movieTitle === undefined ) {
+     		movieTitle = newMovieTitle;
+     	}
+
+     	var finalMovie = movieTitle;
+     request( url + finalMovie + attributes + '40e9cece' ),
+     	function (error, response, body) {
+			console.log(movieTitle);
+		
+		console.log('------------------------- Movie Info ----------------------------');
+		console.log('-----------------------------------------------------------------' + '\r\n');
+	    console.log('Title: ' + body.title);
+	    console.log('Release Year: ' + body.year);
+	    console.log('IMdB Rating: ' + body.imdbRating);
+	    console.log('Rotten Tomatoes Rating: ' + body.incTomatoes);
+	    console.log('Produced In (Country): ' + body.country);
+	    console.log('Language: ' + body.language);
+	    console.log('Plot: ' + body.plot);
+	    console.log('Actors: ' + body.actors);
+	    console.log('-----------------------------------------------------------------' + '\r\n');
+	    
+	//     } else {
+	//       console.log('Error occurred.'); 
+ // }
+};
+}
