@@ -73,12 +73,17 @@ function getSong() {
  	if ( movieTitle === undefined ) {
  		movieTitle = newMovieTitle;
      }
-
      request('http://www.omdbapi.com/?t=' + movieTitle + '&y=&plot=short&tomatoes=true&apikey=40e9cece', 
      	function (err, response, body) {
      console.log("Movie Title: " + JSON.stringify( movieTitle, null, 2));      
       if (!err && response.statusCode == 200) {
                var movieData = JSON.parse(body);
+               console.log('\r\n' + '---------------------------------------------------------');
+               console.log("*********************************************************");
+               console.log('----------- OMDB DATABASE MOVIE DATA RETRIEVAL-----------');
+               console.log("*********************************************************");
+               console.log('---------------------------------------------------------');
+               console.log(" ");
                console.log("Title: " + movieData.Title);
                console.log("Year: " + movieData.Year);
                console.log("IMDB Rating: " + movieData.imdbRating);
@@ -88,13 +93,12 @@ function getSong() {
                console.log("Actors: " + movieData.Actors);
                console.log("Rotten Tomatoes Rating: " + movieData.tomatoUserRating);
                console.log("Rotten Tomatoes URL: " + movieData.tomatoURL);
-               
+               console.log('\r\n\r' + '--------------------------------------------------------');
           } else {
                console.log(err);
           }
-// });
 
-});
+      });
 
 	//action statement, switch statement to declare what action to execute.
 	switch(liriCmd){
