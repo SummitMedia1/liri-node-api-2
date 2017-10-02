@@ -7,6 +7,10 @@ var keys = require('./keys.js');
 var request = require('request');
 var twitter = require('twitter');
 var fs = require('fs');
+var commands = process.argv.slice(3);
+var command1 = commands[0];
+var command2 = commands[1];
+var command3 = commands[3];
 var liriCmd = process.argv[2];
 var params = { screen_name: 'SummitMedia1' } && { count: 20 };
 
@@ -15,9 +19,9 @@ var params = { screen_name: 'SummitMedia1' } && { count: 20 };
 
 function getTweets () {
 	var twitterKeys = new twitter(keys.twitterKeys);
-	 	twitterKeys.get('statuses/user_timeline', params, function(error, data, response) {
+	 	twitterKeys.get('statuses/user_timeline', params, function(err, data, response) {
 			 // console.log("error" + JSON.stringify(error));
-			 if (!error) {
+			 if (!err) {
 			 	console.log("=================================================================");
 			 	console.log("Here are @SummitMedia1's latest tweets:");
 					for(var i = 0; i < data.length; i++) {
@@ -65,9 +69,8 @@ function getSong() {
 //******************************END OF SPOTIFY***************************************************
 
 //******************************BEGIN OMDB*******************************************************
-// var omdbApi = require('omdb-client');
+function getMovie() {
 
-// function aMovieForMe(){
  	var movieTitle = process.argv[3];
  	var newMovieTitle = "Mr+Nobody";
  	if ( movieTitle === undefined ) {
@@ -99,8 +102,32 @@ function getSong() {
           }
 
       });
+}
 
+//-----------------------------------------------------------------------------------------------------
+
+//-----Do What It Says --------------------------------------------------------------------------------
+
+function readRandomText() {
+fs.readFile('random.txt', 'utf8', function(err, data) {
+	if (err) {
+		console.log('The following error occurred: ' + err);
+	} else {
+		var dataArray = data.split(",");
+		        var dataString = dataArray.join(" ");
+		        var command = "node liri.js " + dataString;
+		                if (dataArray[0] == "spotify-this-song") {
+		                    getSong(command + dataArray[1]);
+		                } else if (dataArray[0] == "movie-this") {
+		                    getMovie(command + dataArray[1]);
+		                } else if (dataArray[0] == "my-tweets") {
+		                    myTweets();
+}
+		}
+});
+}
 	//action statement, switch statement to declare what action to execute.
+
 	switch(liriCmd){
 
 		case 'my-tweets':
@@ -108,15 +135,19 @@ function getSong() {
 		break;
 
 		case 'spotify-this-song':
-		getSong();
+		getSong(command3);
 		break;
 
 		case 'movie-this':
-		aMovieForMe();
+		getMovie(command3);
 		break;
 
 		case 'do-what-it-says':
-		followTheTextbook();
+		readRandomText();
 		break;
-		
-	}
+
+default:
+break;
+}
+//appends the arugments to the log.txt file
+fs.appendFile("log.txt", process.argv + "\n");
