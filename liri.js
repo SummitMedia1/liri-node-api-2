@@ -11,8 +11,8 @@ var commands = process.argv.slice(3);
 // var inquirer = require('inquirer');
 // var command1 = commands[0];
 // var command2 = commands[1];
-var command3 = commands[3];
-var liriCmd = process.argv[2];
+var liriCmd2 = process.argv[3];
+var liriCmd1 = process.argv[2];
 var params = { screen_name: 'SummitMedia1' } && { count: 20 };
 
 //Twitter section
@@ -153,18 +153,18 @@ function getMovie() {
 		// }
 	//action statement, switch statement to declare what action to execute.
 
-	switch(liriCmd){            
+	switch(liriCmd1){            
 
 			case 'my-tweets':
 			getTweets();
 			break;
 
 			case 'spotify-this-song':
-			getSong(dataArray[1]);
+			getSong(liriCmd2);
 			break;
 
 			case 'movie-this':
-			getMovie(command3);
+			getMovie(liriCmd2);
 			break;
 
 			case 'do-what-it-says':
