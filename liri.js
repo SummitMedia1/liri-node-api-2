@@ -8,12 +8,12 @@ var request = require('request');
 var twitter = require('twitter');
 var fs = require('fs');
 var commands = process.argv.slice(3);
+// var inquirer = require('inquirer');
 // var command1 = commands[0];
 // var command2 = commands[1];
 var command3 = commands[3];
 var liriCmd = process.argv[2];
 var params = { screen_name: 'SummitMedia1' } && { count: 20 };
-
 
 //Twitter section
 
@@ -29,12 +29,12 @@ function getTweets () {
 						console.log('Tweet Number: ' + (i+1));
 	 					console.log('@SummitMedia1 tweeted on: ' + data[i].created_at);
 	 					console.log('Message:' + data[i].text);
-	 					fs.appendFile('log.txt', "=================================================================" + "\n\r");
-			 			fs.appendFile('log.txt', "Here are @SummitMedia1's latest tweets:");
-						fs.appendFile('log.txt', "_______________________________________________________" + "\n\r");
-						fs.appendFile('log.txt', 'Tweet Number: ' + (i+1));
-	 					fs.appendFile('log.txt', '@SummitMedia1 tweeted on: ' + data[i].created_at);
-	 					fs.appendFile('log.txt', 'Message:' + data[i].text);
+	 					fs.appendFileSync('log.txt', "=================================================================" + "\n\r");
+			 			fs.appendFileSync('log.txt', "Here are @SummitMedia1's latest tweets:");
+						fs.appendFileSync('log.txt', "_______________________________________________________" + "\n\r");
+						fs.appendFileSync('log.txt', 'Tweet Number: ' + (i+1));
+	 					fs.appendFileSync('log.txt', '@SummitMedia1 tweeted on: ' + data[i].created_at);
+	 					fs.appendFileSync('log.txt', 'Message:' + data[i].text);
 	 					}
 
 }
@@ -68,13 +68,13 @@ function getSong(Song) {
 								console.log('Song Name: ' + music.name + '.\r\n');
 								console.log('Album Name: ' + music.album.name + '.\r\n');
 								console.log('Preview Song Url: ' + music.preview_url + '.\r\n');
-								fs.appendFile('log.txt', '-----------------------------------------------------------------' + '\r\n');
-								fs.appendFile('log.txt', '-----------------------------------------------------------------' + '\r\n');
-								fs.appendFile('log.txt', 'Artist Name(s): ' + music.artists[0].name + '.\r\n');
-								fs.appendFile('log.txt', 'Song Name: ' + music.name + '.\r\n');
-								fs.appendFile('log.txt', 'Album Name: ' + music.album.name + '.\r\n');
-								fs.appendFile('log.txt', 'Preview Song Url: ' + music.preview_url + '.\r\n');
-								fs.appendFile('log.txt', "-----------------------------------------------------------------" + '\r\n');
+								fs.appendFileSync('log.txt', '-----------------------------------------------------------------' + '\r\n');
+								fs.appendFileSync('log.txt', '-----------------------------------------------------------------' + '\r\n');
+								fs.appendFileSync('log.txt', 'Artist Name(s): ' + music.artists[0].name + '.\r\n');
+								fs.appendFileSync('log.txt', 'Song Name: ' + music.name + '.\r\n');
+								fs.appendFileSync('log.txt', 'Album Name: ' + music.album.name + '.\r\n');
+								fs.appendFileSync('log.txt', 'Preview Song Url: ' + music.preview_url + '.\r\n');
+								fs.appendFileSync('log.txt', "-----------------------------------------------------------------" + '\r\n');
 						}
 });
 }
@@ -118,25 +118,25 @@ function getMovie() {
                console.log('---------------------------------------------------------');
                console.log("Rotten Tomatoes URL: " + movieData.tomatoURL);
                console.log('---------------------------------------------------------');
-            fs.appendFile('log.txt', '------------------------------------------------------------------');
-			fs.appendFile('log.txt', 'Title: ' + movieData.Title + '.\r\n');	
-			fs.appendFile(" ");					
-			fs.appendFile('log.txt', "Release Year: " + movieData.Year + '.\r\n');
-			fs.appendFile(" ");				
-			fs.appendFile('log.txt', "IMdB Rating: " + movieData.imdbRating + '.\r\n');
-			fs.appendFile(" ");			
-			fs.appendFile('log.txt', "Rotten Tomatoes Rating: " + movieData.tomatoRating + '.\r\n');
-			fs.appendFile(" ");
-			fs.appendFile('log.txt', "Rotten Tomatoes URL: " + movieData.tomatoURL + '.\r\n');
-			fs.appendFile(" ");	
-			fs.appendFile('log.txt', "Country: " + movieData.Country + '.\r\n');
-			fs.appendFile(" ");	
-			fs.appendFile('log.txt', "Language: " + movieData.Language + '.\r\n');
-			fs.appendFile(" ");	
-			fs.appendFile('log.txt', "Plot: " + movieData.Plot + '.\r\n');
-			fs.appendFile(" ");	
-			fs.appendFile('log.txt', "Actors: " + movieData.Actors + '.\r\n');					
-			fs.appendFile('log.txt', "------------------------------------------------------------------");
+            fs.appendFileSync('log.txt', '------------------------------------------------------------------');
+			fs.appendFileSync('log.txt', 'Title: ' + movieData.Title + '.\r\n');	
+			fs.appendFileSync(" ");					
+			fs.appendFileSync('log.txt', "Release Year: " + movieData.Year + '.\r\n');
+			fs.appendFileSync(" ");				
+			fs.appendFileSync('log.txt', "IMdB Rating: " + movieData.imdbRating + '.\r\n');
+			fs.appendFileSync(" ");			
+			fs.appendFileSync('log.txt', "Rotten Tomatoes Rating: " + movieData.tomatoRating + '.\r\n');
+			fs.appendFileSync(" ");
+			fs.appendFileSync('log.txt', "Rotten Tomatoes URL: " + movieData.tomatoURL + '.\r\n');
+			fs.appendFileSync(" ");	
+			fs.appendFileSync('log.txt', "Country: " + movieData.Country + '.\r\n');
+			fs.appendFileSync(" ");	
+			fs.appendFileSync('log.txt', "Language: " + movieData.Language + '.\r\n');
+			fs.appendFileSync(" ");	
+			fs.appendFileSync('log.txt', "Plot: " + movieData.Plot + '.\r\n');
+			fs.appendFileSync(" ");	
+			fs.appendFileSync('log.txt', "Actors: " + movieData.Actors + '.\r\n');					
+			fs.appendFileSync('log.txt', "------------------------------------------------------------------");
           } else {
                console.log(err);
           }
@@ -148,42 +148,43 @@ function getMovie() {
 
 //-----Do What It Says --------------------------------------------------------------------------------
 
-function readRandomText() {
-fs.readFile('random.txt', 'utf8', function(err, data) {
-	// console.log('data' + data);
-	if (err) {
-		console.log('The following error occurred: ' + err);
-	} else {
-		var dataArray = data.split(",");
-		        console.log(dataArray[1]);
-		                	getSong(dataArray[1]);
-		                    
-				}
-			});
-		}
+// function readRandomText() {
+
+		// }
 	//action statement, switch statement to declare what action to execute.
 
-	switch(liriCmd){
+	switch(liriCmd){            
 
-		case 'my-tweets':
-		getTweets();
-		break;
+			case 'my-tweets':
+			getTweets();
+			break;
 
-		case 'spotify-this-song':
-		getSong(command3);
-		break;
+			case 'spotify-this-song':
+			getSong(dataArray[1]);
+			break;
 
-		case 'movie-this':
-		getMovie(command3);
-		break;
+			case 'movie-this':
+			getMovie(command3);
+			break;
 
-		case 'do-what-it-says':
-		readRandomText();
-		break;
+			case 'do-what-it-says':
+			fs.readFile('random.txt', 'utf8', function(err, data) {
+					if (err) {
+						console.log('The following error occurred: ' + err);
 
-default:
-break;
-}
+					} else {
+						var dataArray = data.split(",");
+						        console.log(dataArray[1]);
+						                	getSong(dataArray[1]);
+										
+					}
+					// break;
+				});
+		}
+
+			// default:
+			// break;
+
 //appends the arugments to the log.txt file
-fs.appendFile('log.txt', process.argv + "\n");
+// fs.sappendFile('log.txt', process.argv + "\n");
 
