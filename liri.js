@@ -29,9 +29,9 @@ function getTweets () {
 						console.log('Tweet Number: ' + (i+1));
 	 					console.log('@SummitMedia1 tweeted on: ' + data[i].created_at);
 	 					console.log('Message:' + data[i].text);
-	 					fs.appendFile('log.txt', "=================================================================");
+	 					fs.appendFile('log.txt', "=================================================================" + "\n\r");
 			 			fs.appendFile('log.txt', "Here are @SummitMedia1's latest tweets:");
-						fs.appendFile('log.txt', "_______________________________________________________");
+						fs.appendFile('log.txt', "_______________________________________________________" + "\n\r");
 						fs.appendFile('log.txt', 'Tweet Number: ' + (i+1));
 	 					fs.appendFile('log.txt', '@SummitMedia1 tweeted on: ' + data[i].created_at);
 	 					fs.appendFile('log.txt', 'Message:' + data[i].text);
