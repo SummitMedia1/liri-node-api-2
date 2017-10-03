@@ -1,36 +1,38 @@
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,do-what-it-says
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,do-what-it-says
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,do-what-it-says
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,do-what-it-says
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,do-what-it-says
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,do-what-it-says
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,do-what-it-says
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,do-what-it-says
+/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,movie-this,rocky
+------------------------------------------------------------------Title: Rocky.
+Release Year: 1976.
+IMdB Rating: 8.1.
+Rotten Tomatoes Rating: N/A.
+Rotten Tomatoes URL: http://www.rottentomatoes.com/m/1017776-rocky/.
+Country: USA.
+Language: English.
+Plot: Rocky Balboa, a small-time boxer, gets a supremely rare chance to fight heavy-weight champion Apollo Creed in a bout in which he strives to go the distance for his self-respect..
+Actors: Sylvester Stallone, Talia Shire, Burt Young, Carl Weathers.
+------------------------------------------------------------------/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,spotify-this-song,help
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+Artist Name(s): Papa Roach.
+Song Name: Help.
+Album Name: Help.
+Preview Song Url: https://p.scdn.co/mp3-preview/bc7456ee8dbd65a89a736d0846ab0629d1a046e3?cid=ecd01c4e787c4056b1ccc67960a3d179.
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+Artist Name(s): blackbear.
+Song Name: Different Hos.
+Album Name: Help.
+Preview Song Url: https://p.scdn.co/mp3-preview/6ce5b54a9b82b2ae8bf75ceb30c766feee5d080f?cid=ecd01c4e787c4056b1ccc67960a3d179.
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+Artist Name(s): blackbear.
+Song Name: Help (feat. Maejor).
+Album Name: Help.
+Preview Song Url: https://p.scdn.co/mp3-preview/c74ce9064b85f20335aa8fb6145c65f23e832e0a?cid=ecd01c4e787c4056b1ccc67960a3d179.
+-----------------------------------------------------------------
 /usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,my-tweets
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,movie-this
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,movie-this
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,movie-this
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,movie-this
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,spotify-this-song,help
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,spotify-this-song,help
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,spotify-this-song,help
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,spotify-this-song,help
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,spotify-this-song,help
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,spotify-this-song,help
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,spotify-this-song,help
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,spotify-this-song,help
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,spotify-this-song,help
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,spotify-this-song,help
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,spotify-this-song,help
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,spotify-this-song,help
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,spotify-this-song,help
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,do-what-I-say
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,do-what-it-says
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,do-what-it-says
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,do-what-it-says
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,do-what-it-says
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,do-what-it-says
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,spotify-this-song,yesterday
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,my-tweets
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,movie-this
-/usr/local/bin/node,/Users/mfuchsman/Bootcamp/Homework/liri-node-api-2/liri,spotify-this-song,happy
+=================================================================Here are @SummitMedia1's latest tweets:_______________________________________________________Tweet Number: 1@SummitMedia1 tweeted on: Sat Sep 30 22:41:28 +0000 2017Message:#SummitMediaDesign "The peak of pure, clean design."=================================================================Here are @SummitMedia1's latest tweets:_______________________________________________________Tweet Number: 2@SummitMedia1 tweeted on: Sat Sep 30 22:39:54 +0000 2017Message:"There is no elevator to success — you have to take the stairs."
+—Anonymous #success #Hardwork=================================================================Here are @SummitMedia1's latest tweets:_______________________________________________________Tweet Number: 3@SummitMedia1 tweeted on: Sat Sep 30 22:30:15 +0000 2017Message:#FenderStratocaster #Fender #Guitars #KeithRichards "The Strat is as sturdy and strong as a mule, yet it has the elegance of a racehorse."=================================================================Here are @SummitMedia1's latest tweets:_______________________________________________________Tweet Number: 4@SummitMedia1 tweeted on: Sat Sep 30 22:24:30 +0000 2017Message:"When the power of love exceeds the love of power, then we will have world peace. " - Jimi Hendrix=================================================================Here are @SummitMedia1's latest tweets:_______________________________________________________Tweet Number: 5@SummitMedia1 tweeted on: Sat Sep 30 22:22:19 +0000 2017Message:“Design creates culture. Culture shapes values. Values determine the future.” –Robert L. Peters=================================================================Here are @SummitMedia1's latest tweets:_______________________________________________________Tweet Number: 6@SummitMedia1 tweeted on: Sat Sep 30 22:15:53 +0000 2017Message:#SteveJobs #Apple #design  
+“Design is not just what it looks like and feels like. Design is how it works.” –Steve Jobs=================================================================Here are @SummitMedia1's latest tweets:_______________________________________________________Tweet Number: 7@SummitMedia1 tweeted on: Sat Sep 30 22:12:00 +0000 2017Message:Ping! Pow! Boom! Bing! - Tommy DeVito=================================================================Here are @SummitMedia1's latest tweets:_______________________________________________________Tweet Number: 8@SummitMedia1 tweeted on: Sat Sep 30 22:03:55 +0000 2017Message:All I've got is a red guitar, 
+Three chords,
+And the truth - Bono c/o of Bob Dylan=================================================================Here are @SummitMedia1's latest tweets:_______________________________________________________Tweet Number: 9@SummitMedia1 tweeted on: Sat Sep 30 21:51:29 +0000 2017Message:Beer is made from hops. Hops are plants; therefore, beer is a salad! - Author unknown, but a poet nonetheleast.Here are @SummitMedia1's latest tweets:=================================================================_______________________________________________________Tweet Number: 10@SummitMedia1 tweeted on: Sat Sep 30 21:48:32 +0000 2017Message:#harleydavidson #Softail Harley-Davidson - Loud Pipes Saves Lives: Live to Ride, Ride To Live.=================================================================Here are @SummitMedia1's latest tweets:_______________________________________________________Tweet Number: 11@SummitMedia1 tweeted on: Sat Sep 30 19:17:45 +0000 2017Message:Not eating or drinking anything and praying for forgiveness for mistakes I made during the year. Hope it helps! #YomKippur2017 #needajob=================================================================Here are @SummitMedia1's latest tweets:_______________________________________________________Tweet Number: 12@SummitMedia1 tweeted on: Sat Sep 30 19:14:13 +0000 2017Message:“Graphic design will save the world right after rock and roll does.” - David Carson #rockandroll #GraphicDesigner=================================================================Here are @SummitMedia1's latest tweets:_______________________________________________________Tweet Number: 13@SummitMedia1 tweeted on: Sat Sep 30 19:11:57 +0000 2017Message:“There are three responses to a piece of design – yes, no, and WOW! Wow is the one to aim for.” - Milton Glaser #design #gooddesign=================================================================Here are @SummitMedia1's latest tweets:_______________________________________________________Tweet Number: 14@SummitMedia1 tweeted on: Sat Sep 30 18:59:23 +0000 2017Message:At full-stack bootcamp class. #wishIknewwhattheyaretalkingabout https://t.co/MdqzDkbBDo=================================================================Here are @SummitMedia1's latest tweets:_______________________________________________________Tweet Number: 15@SummitMedia1 tweeted on: Sat Sep 30 18:12:06 +0000 2017Message:#HTTR
