@@ -8,8 +8,8 @@ var request = require('request');
 var twitter = require('twitter');
 var fs = require('fs');
 var commands = process.argv.slice(3);
-var command1 = commands[0];
-var command2 = commands[1];
+// var command1 = commands[0];
+// var command2 = commands[1];
 var command3 = commands[3];
 var liriCmd = process.argv[2];
 var params = { screen_name: 'SummitMedia1' } && { count: 20 };
@@ -49,18 +49,18 @@ function getSong(Song) {
      var newSong = 'ace+of+base+sign';
      if ( !Song ) {
            Song = newSong;
-           console.log(Song);
       }
+		        // var countEquals = { count: 3};
 		        spotify.search({ type: 'track', query: Song }, function(err, data) {
 		            if (err) {
 		                console.log('The following error occurred: ' + err);
 		                }
-						for (var i = 0; i < data.tracks.items.length; i++) {
+						for (var i = 0; i < 3; i++) {
 							var music = data.tracks.items[i];	
 								console.log('-----------------------------------------------------------------' + '\r\n');
 								console.log('Artist Name(s): ' + music.artists[0].name + '.\r\n');
 								console.log('Song Name: ' + music.name + '.\r\n');
-								console.log('AAlbum Name: ' + music.album.name + '.\r+\n');
+								console.log('Album Name: ' + music.album.name + '.\r\n');
 								console.log('Preview Song Url: ' + music.preview_url + '.\r\n');
 								console.log("-----------------------------------------------------------------" + '\r\n');
 						}
@@ -89,15 +89,23 @@ function getMovie() {
                console.log('---------------------------------------------------------');
                console.log(" ");
                console.log("Title: " + movieData.Title);
+               console.log('---------------------------------------------------------');
                console.log("Year: " + movieData.Year);
+               console.log('---------------------------------------------------------');
                console.log("IMDB Rating: " + movieData.imdbRating);
+               console.log('---------------------------------------------------------');
                console.log("Country: " + movieData.Country);
+               console.log('---------------------------------------------------------');
                console.log("Language: " + movieData.Language);
-               console.log("Plot: " + movieData.Plot);
+               console.log('---------------------------------------------------------' + '.\r\n');
+               console.log("Plot: " + movieData.Plot + '.\r\n');
+               console.log('---------------------------------------------------------');
                console.log("Actors: " + movieData.Actors);
+               console.log('---------------------------------------------------------');
                console.log("Rotten Tomatoes Rating: " + movieData.tomatoUserRating);
+               console.log('---------------------------------------------------------');
                console.log("Rotten Tomatoes URL: " + movieData.tomatoURL);
-               console.log('\r\n\r' + '--------------------------------------------------------');
+               console.log('---------------------------------------------------------');
           } else {
                console.log(err);
           }
@@ -116,17 +124,12 @@ fs.readFile('random.txt', 'utf8', function(err, data) {
 		console.log('The following error occurred: ' + err);
 	} else {
 		var dataArray = data.split(",");
-		        // var dataString = dataArray.join(" ");
-		        // var command = "node liri.js";
-		                if (dataArray[0] === "spotify-this-song") {
-		                	// console.log('data2:'+ dataArray[0]);
-		                	// console.log('data3:' + dataArray[1]);
-		                    getSong(dataArray[1]);
-
-						}
-					}
+		        console.log(dataArray[1]);
+		                	getSong(dataArray[1]);
+		                    
+				}
 			});
-}
+		}
 	//action statement, switch statement to declare what action to execute.
 
 	switch(liriCmd){
