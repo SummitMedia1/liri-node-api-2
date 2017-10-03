@@ -186,5 +186,5 @@ function getMovie() {
 			// break;
 
 //appends the arugments to the log.txt file
-// fs.sappendFile('log.txt', process.argv + "\n");
+fs.appendFileSync('log.txt', process.argv + "\n");
 
