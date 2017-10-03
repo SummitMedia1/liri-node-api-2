@@ -40,15 +40,16 @@ function getTweets () {
 //This is the end of Twitter GETS******************************************************************* 
 
 //This is where Spotify begins *********************************************************************
-function getSong() {
+function getSong(Song) {
 	var Spotify = require('node-spotify-api');
 	var Song = process.argv[3];
 	var spotify = new Spotify( { id: 'ecd01c4e787c4056b1ccc67960a3d179', secret: 'be85eaff2fea477a8eac9fab044152ba'} );
 		// console.log("Spotify id and secret: " + JSON.stringify( spotify, null, 2));
 
      var newSong = 'ace+of+base+sign';
-     if ( Song === undefined ) {
+     if ( !Song ) {
            Song = newSong;
+           console.log(Song);
       }
 		        spotify.search({ type: 'track', query: Song }, function(err, data) {
 		            if (err) {
@@ -110,21 +111,21 @@ function getMovie() {
 
 function readRandomText() {
 fs.readFile('random.txt', 'utf8', function(err, data) {
+	// console.log('data' + data);
 	if (err) {
 		console.log('The following error occurred: ' + err);
 	} else {
 		var dataArray = data.split(",");
-		        var dataString = dataArray.join(" ");
-		        var command = "node liri.js " + dataString;
-		                if (dataArray[0] == "spotify-this-song") {
-		                    getSong(command + dataArray[1]);
-		                } else if (dataArray[0] == "movie-this") {
-		                    getMovie(command + dataArray[1]);
-		                } else if (dataArray[0] == "my-tweets") {
-		                    myTweets();
-}
-		}
-});
+		        // var dataString = dataArray.join(" ");
+		        // var command = "node liri.js";
+		                if (dataArray[0] === "spotify-this-song") {
+		                	// console.log('data2:'+ dataArray[0]);
+		                	// console.log('data3:' + dataArray[1]);
+		                    getSong(dataArray[1]);
+
+						}
+					}
+			});
 }
 	//action statement, switch statement to declare what action to execute.
 
