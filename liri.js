@@ -1,16 +1,15 @@
 //node liri.js movie-this ''
 //node liri.js spotify-this-song ''
 //node liri.js my-tweets
-console.log("Let's get started");
+// console.log("Let's get started");
 
 var keys = require('./keys.js');
 var request = require('request');
 var twitter = require('twitter');
+var Spotify = require('node-spotify-api');
 var fs = require('fs');
-var commands = process.argv.slice(3);
-// var inquirer = require('inquirer');
-// var command1 = commands[0];
-// var command2 = commands[1];
+// var Song = process.argv[3];
+var commands = process.argv;
 var liriCmd2 = process.argv[3];
 var liriCmd1 = process.argv[2];
 var params = { screen_name: 'SummitMedia1' } && { count: 20 };
@@ -46,18 +45,13 @@ function getTweets () {
 //This is the end of Twitter GETS******************************************************************* 
 
 //This is where Spotify begins *********************************************************************
-function getSong(Song) {
-	var Spotify = require('node-spotify-api');
-	var Song = process.argv[3];
-	var spotify = new Spotify( { id: 'ecd01c4e787c4056b1ccc67960a3d179', secret: 'be85eaff2fea477a8eac9fab044152ba'} );
-		// console.log("Spotify id and secret: " + JSON.stringify( spotify, null, 2));
+function getSong(liriCmd2, test) {
 
-     var newSong = 'ace+of+base+sign';
-     if ( !Song ) {
-           Song = newSong;
-      }
-		        // var countEquals = { count: 3};
-		        spotify.search({ type: 'track', query: Song }, function(err, data) {
+	
+	var spotify = new Spotify( { id: 'ecd01c4e787c4056b1ccc67960a3d179', secret: 'be85eaff2fea477a8eac9fab044152ba'} );
+	liriCmd2 = liriCmd2 || test || 'ace+of+base+sign';
+
+		        spotify.search({ type: 'track', query: liriCmd2 }, function(err, data) {
 		            if (err) {
 		                console.log('The following error occurred: ' + err);
 		                }
@@ -84,14 +78,13 @@ function getSong(Song) {
 //******************************BEGIN OMDB*******************************************************
 function getMovie() {
 
- 	var movieTitle = process.argv[3];
  	var newMovieTitle = "Mr+Nobody";
- 	if ( movieTitle === undefined ) {
- 		movieTitle = newMovieTitle;
+ 	if ( liriCmd2 === undefined ) {
+ 		liriCmd2 = newMovieTitle;
      }
-     request('http://www.omdbapi.com/?t=' + movieTitle + '&y=&plot=short&tomatoes=true&apikey=40e9cece', 
+     request('http://www.omdbapi.com/?t=' + liriCmd2 + '&y=&plot=short&tomatoes=true&apikey=40e9cece', 
      	function (err, response, body) {
-     console.log("Movie Title: " + JSON.stringify( movieTitle, null, 2));      
+     console.log("Movie Title: " + JSON.stringify( liriCmd2, null, 2));   
       if (!err && response.statusCode == 200) {
                var movieData = JSON.parse(body);
                console.log('\r\n' + '---------------------------------------------------------');
@@ -174,8 +167,9 @@ function getMovie() {
 
 					} else {
 						var dataArray = data.split(",");
+						// var execute = 'node liri ' + dataArray[1];
 						        console.log(dataArray[1]);
-						                	getSong(dataArray[1]);
+						                	getSong(null, dataArray[1]);
 										
 					}
 					// break;
