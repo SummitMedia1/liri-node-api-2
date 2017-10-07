@@ -1,35 +1,35 @@
-//package.json
 {
-  "requires": true,
-  "lockfileVersion": 1,
+  "name": "liribot",
+  "version": "1.0.0",
+  "description": "movies songs and tweets api calls",
+  "main": "liri.js",
   "dependencies": {
-    "ajv": {
-      "version": "5.2.3",
-      "resolved": "https://registry.npmjs.org/ajv/-/ajv-5.2.3.tgz",
-      "integrity": "sha1-wG9Zh3jETGsWGrr+NGa4GtGBTtI=",
-      "requires": {
-        "co": "4.6.0",
-        "fast-deep-equal": "1.0.0",
-        "json-schema-traverse": "0.3.1",
-        "json-stable-stringify": "1.0.1"
-      }
-    },
-    "spotify": {
-      "version": "0.3.0",
-      "resolved": "https://registry.npmjs.org/spotify/-/spotify-0.3.0.tgz",
-      "integrity": "sha1-QrhRBc/DDxdMBQ8iJ8IanX7bG+Q="
-    },
-        "tweetnacl": {
-      "version": "0.14.5",
-      "resolved": "https://registry.npmjs.org/tweetnacl/-/tweetnacl-0.14.5.tgz",
-      "integrity": "sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q="
-    },
-    "twitter": {
-      "version": "1.7.1",
-      "resolved": "https://registry.npmjs.org/twitter/-/twitter-1.7.1.tgz",
-      "integrity": "sha1-B2I3jx3BwFDkj2ZqypBOJLGpYvQ=",
-      "requires": {
-        "deep-extend": "0.5.0",
-        "request": "2.83.0"
-      }
-    }
+    "fs": "0.0.1-security",
+    "inquirer": "^3.3.0",
+    "omdb": "^0.8.0",
+    "request": "^2.83.0",
+    "spotify": "^0.3.0",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SummitMedia1/liri-node-api-2.git"
+  },
+  "keywords": [
+    "movies",
+    "spotify",
+    "twitter",
+    "tweets",
+    "omdb"
+  ],
+  "author": "summitmedia1",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SummitMedia1/liri-node-api-2/issues"
+  },
+  "homepage": "https://github.com/SummitMedia1/liri-node-api-2#readme"
+}
